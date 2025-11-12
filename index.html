@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แนะนำตัว — ภีรวัฒน์ ศรีโยธี</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Noto Sans Thai", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f8f9fa, #f3e5f5, #e3f2fd);
+        color: #333;
+        line-height: 1.8;
+        min-height: 100vh;
+        padding-bottom: 3rem;
+    }
+
+    /* แถบนำทาง */
+    .navbar {
+        background: rgba(255,255,255,0.85);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px solid #d1c4e9;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .navbar .nav-left {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .navbar a {
+        color: #5e35b1;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.6rem 1.2rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+        background: #ede7f6;
+        color: #311b92;
+    }
+
+    .navbar a.active {
+        background: linear-gradient(90deg, #ce93d8, #90caf9);
+        color: white;
+        box-shadow: 0 0 10px rgba(103,58,183,0.2);
+    }
+
+    /* กล่องโปรไฟล์ */
+    .container {
+        max-width: 950px;
+        margin: 3rem auto;
+        padding: 2.5rem;
+        background: white;
+        border-radius: 25px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        position: relative;
+    }
+
+    .profile-img {
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        border: 5px solid #b39ddb;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 1.5rem auto;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.4rem;
+        color: #4527a0;
+        letter-spacing: 1px;
+        margin-bottom: 0.3rem;
+    }
+
+    .english-name {
+        text-align: center;
+        color: #666;
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .highlight {
+        background: linear-gradient(90deg, #e1bee7, #b3e5fc);
+        color: #283593;
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-weight: 600;
+        text-align: center;
+        display: block;
+        width: fit-content;
+        margin: 0 auto 2rem auto;
+    }
+
+    .info-grid {
+        margin: 1.5rem 0 2.5rem 0;
+    }
+
+    .info-item {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dashed #ccc;
+        padding: 0.6rem 0;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+
+    .info-item:hover {
+        background: linear-gradient(90deg, #f3e5f5, #e1f5fe);
+        border-radius: 10px;
+        padding-left: 0.8rem;
+    }
+
+    .info-label {
+        color: #4527a0;
+        font-weight: 600;
+    }
+
+    .info-value {
+        color: #5c6bc0;
+        font-weight: 500;
+        text-align: right;
+        width: 50%;
+    }
+
+    .section-title {
+        color: #283593;
+        font-size: 1.4rem;
+        margin: 2rem 0 1rem;
+        border-left: 5px solid #9575cd;
+        padding-left: 0.6rem;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 1rem;
+    }
+
+    ul li {
+        background: #f3e5f5;
+        margin: 0.4rem 0;
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
+        transition: background 0.3s ease;
+    }
+
+    ul li:hover {
+        background: #e1bee7;
+    }
+
+    .about-me p {
+        background: #e3f2fd;
+        padding: 1rem 1.2rem;
+        border-radius: 12px;
+        color: #37474f;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .contact-info {
+        margin-top: 1.5rem;
+        background: linear-gradient(90deg, #f3e5f5, #e1f5fe);
+        padding: 1.2rem 1.5rem;
+        border-radius: 15px;
+    }
+
+    .contact-info div {
+        margin: 0.3rem 0;
+    }
+
+    .contact-info a {
+        color: #3949ab;
+        text-decoration: none;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .nav-left {
+            flex-wrap: wrap;
+        }
+        .info-value {
+            text-align: left;
+            width: auto;
+        }
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html" class="active">หน้าหลัก</a>
+         <a href="skills.html" >ทักษะ&ผลงาน</a>
+        <a href="activities.html">กิจกรรม</a>
+        <a href="contact.html">ติดต่อ</a>
+    </div>
+</nav>
+
+<div class="container">
+    <img src="inmed/profile1.jpg" alt="รูปโปรไฟล์ - บิว" class="profile-img">
+
+    <h1>นายภีรวัฒน์ ศรีโยธี</h1>
+    <div class="english-name">Peerawat Seeyothee</div>
+    <div class="highlight">ชื่อเล่น: บิว (Biw)</div>
+
+    <div class="info-grid">
+        <div class="info-item"><span class="info-label">อายุ:</span><span class="info-value">21 ปี</span></div>
+        <div class="info-item"><span class="info-label">วันเกิด:</span><span class="info-value">13 ตุลาคม 2547</span></div>
+        <div class="info-item"><span class="info-label">สถานะ:</span><span class="info-value">นักศึกษาชั้นปีที่ 3</span></div>
+        <div class="info-item"><span class="info-label">สาขา:</span><span class="info-value">วิทยาการคอมพิวเตอร์</span></div>
+        <div class="info-item"><span class="info-label">คณะ:</span><span class="info-value">วิทยาศาสตร์</span></div>
+        <div class="info-item"><span class="info-label">มหาวิทยาลัย:</span><span class="info-value">มหาวิทยาลัยราชภัฏอุดรธานี</span></div>
+    </div>
+
+    <h3 class="section-title">ประวัติการศึกษา</h3>
+    <ul>
+        <li>ประถมศึกษาชั้นปีที่ 1 – 6: โรงเรียนนิคมสร้างตนเองเชียงพิณ 3</li>
+        <li>มัธยมศึกษาชั้นปีที่ 1 – 6: โรงเรียนอุดรพิชัยรักษ์พิทยา</li>
+    </ul>
+
+    <div class="about-me">
+        <h3 class="section-title">เกี่ยวกับฉัน</h3>
+        <p>
+            ชื่อ นายภีรวัฒน์ ศรีโยธี (บิว) เป็นนักศึกษามหาวิทยาลัยราชภัฏอุดรธานี 
+            ที่มีความสนใจในการออกแบบเว็บไซต์ และสร้างสรรค์งานที่ตอบโจทย์หน่วยงานต่าง ๆ 
+            ชอบเรียนรู้สิ่งใหม่ ๆ และพร้อมพัฒนาทักษะของตนเองให้ดียิ่งขึ้นเสมอ
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

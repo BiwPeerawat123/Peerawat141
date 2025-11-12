@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ทักษะและผลงาน — ภีรวัฒน์ ศรีโยธี</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Noto Sans Thai", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f8f9fa, #f3e5f5, #e3f2fd);
+        color: #333;
+        line-height: 1.8;
+        min-height: 100vh;
+        padding-bottom: 3rem;
+    }
+
+    /* แถบนำทาง */
+    .navbar {
+        background: rgba(255,255,255,0.85);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px solid #d1c4e9;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .navbar .nav-left {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .navbar a {
+        color: #5e35b1;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.6rem 1.2rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+        background: #ede7f6;
+        color: #311b92;
+    }
+
+    .navbar a.active {
+        background: linear-gradient(90deg, #ce93d8, #90caf9);
+        color: white;
+        box-shadow: 0 0 10px rgba(103,58,183,0.2);
+    }
+
+    /* กล่องหลัก */
+    .container {
+        max-width: 950px;
+        margin: 3rem auto;
+        padding: 2.5rem;
+        background: white;
+        border-radius: 25px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        text-align: center;
+        color: #4527a0;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* =============== ส่วนทักษะ =============== */
+    .skill-category {
+        margin-bottom: 2.5rem;
+    }
+
+    .skill-category h2 {
+        color: #5e35b1;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e1bee7;
+        font-size: 1.7rem;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+    }
+
+    .skill-item {
+        background: #f3e5f5;
+        padding: 1rem;
+        border-radius: 15px;
+        width: calc(50% - 0.6rem);
+        display: flex;
+        align-items: center;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        transition: transform 0.2s;
+    }
+
+    .skill-item:hover {
+        transform: translateY(-3px);
+        background: #ede7f6;
+    }
+
+    .skill-item img {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 8px;
+        padding: 4px;
+    }
+
+    .skill-item span {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #4527a0;
+    }
+
+    /* =============== ส่วนผลงาน =============== */
+    .portfolio-section {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 3px solid #f3e5f5;
+    }
+
+    .portfolio-item {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px dashed #e0e0e0;
+    }
+
+    .portfolio-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .portfolio-item h2 {
+        color: #5e35b1;
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+    }
+
+    .portfolio-item p {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 12px;
+        margin: 0.8rem 0;
+        color: #37474f;
+        line-height: 1.7;
+    }
+
+    .portfolio-images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .portfolio-images img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        object-fit: cover;
+    }
+
+    @media (max-width: 700px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .nav-left {
+            flex-wrap: wrap;
+        }
+        .skill-item {
+            width: 100%;
+        }
+        .portfolio-images {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="skills.html" class="active">ทักษะ&ผลงาน</a>
+        <a href="activities.html">กิจกรรม</a>
+        <a href="contact.html">ติดต่อ</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>ทักษะและผลงานของฉัน</h1>
+
+    <!-- =============== Programming =============== -->
+    <div class="skill-category">
+        <h2>🧠 Programming</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <img src="inmed/1.png" alt="HTML"> <!-- ใส่รูป HTML ที่นี่ -->
+                <span>HTML</span>
+            </div>
+            <div class="skill-item">
+                <img src="inmed/2.png" alt="CSS"> <!-- ใส่รูป CSS ที่นี่ -->
+                <span>CSS</span>
+            </div>
+            <div class="skill-item">
+                <img src="inmed/3.png" alt="Java"> <!-- ใส่รูป Java ที่นี่ -->
+                <span>Java</span>
+            </div>
+            <div class="skill-item">
+                <img src="inmed/4.png" alt="Python"> <!-- ใส่รูป Python ที่นี่ -->
+                <span>Python</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============== AI & Data =============== -->
+    <div class="skill-category">
+        <h2>📊 AI & Data</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <img src="inmed/5.png" alt="SQL"> <!-- ใส่รูป SQL ที่นี่ -->
+                <span>SQL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============== Tools =============== -->
+    <div class="skill-category">
+        <h2>🛠️ Tools</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <img src="inmed/6.png" alt="Git"> <!-- ใส่รูป Git ที่นี่ -->
+                <span>Git</span>
+            </div>
+            <div class="skill-item">
+                <img src="inmed/7.jpg" alt="VSCode"> <!-- ใส่รูป VSCode ที่นี่ -->
+                <span>VSCode</span>
+            </div>
+            <div class="skill-item">
+                <img src="inmed/8.png"alt="Canva"> <!-- หาก Cava = Canva -->
+                <span>Canva</span>
+            </div>
+            <div class="skill-item">
+                <img src="inmed/9.jpg" alt="XAMPP"> <!-- ใส่รูป XAMPP ที่นี่ -->
+                <span>XAMPP</span>
+            </div>
+            <div class="skill-item">
+                <img src="inmed/10.png" alt="CapCut"> <!-- ใส่รูป CapCut ที่นี่ -->
+                <span>CapCut</span>
+            </div>
+            <div class="skill-item">
+                <img src="inmed/11.png"alt="Visual Studio"> <!-- หาก Vision Studio = Visual Studio -->
+                <span>Visual Studio</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============== Soft Skills =============== -->
+    <div class="skill-category">
+        <h2>💡 Soft Skills</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <span>การทำงานเป็นทีม</span>
+            </div>
+            <div class="skill-item">
+                <span>การแก้ปัญหาเฉพาะหน้า</span>
+            </div>
+            <div class="skill-item">
+                <span>ความเป็นผู้นำ</span>
+            </div>
+        </div>
+    </div>
+
+     <!-- =============== ส่วนผลงาน =============== -->
+    <div class="portfolio-section">
+        <h1>ผลงานที่ผ่านมา</h1>
+
+        <!-- ผลงานที่ 1 -->
+        <div class="portfolio-item">
+            <h2>📍 เว็บไซต์การท่องเที่ยวอำเภอเมืองอุดรธานี</h2>
+            <p>
+                พัฒนาเว็บไซต์เพื่อส่งเสริมการท่องเที่ยวในอำเภอเมืองอุดรธานี  
+                โดยเน้นการใช้งานที่ง่าย สวยงาม และแสดงข้อมูลสถานที่ท่องเที่ยวอย่างครบถ้วน
+            </p>
+            <div class="portfolio-images">
+                <img src="inmed/33.png" alt="เว็บไซต์ท่องเที่ยว - ภาพ 1">
+                <img src="inmed/44.png" alt="เว็บไซต์ท่องเที่ยว - ภาพ 2">
+            </div>
+        </div>
+
+        <!-- ผลงานที่ 2 -->
+        <div class="portfolio-item">
+            <h2>🤖 การแข่งขันพัฒนาโปรแกรม AI Chatbot</h2>
+            <p>
+                พัฒนา AI Chatbot สำหรับการตอบคำถามแบบอัตโนมัติผ่านข้อความ  
+                โดยใช้เครื่องมือ Dialogflow ภายใต้ทีม CS 66
+            </p>
+        </div>
+
+        <!-- ผลงานที่ 3 -->
+        <div class="portfolio-item">
+            <h2>👁️ การแข่งขันพัฒนาโปรแกรม AI Pictoblox</h2>
+            <p>
+                แข่งขันพัฒนาแอปพลิเคชันโดยใช้ Machine Learning ผ่านโปรแกรม PICTOBLOX  
+                ประยุกต์ใช้การตรวจจับวัตถุด้วยเทคนิค Object Detection โดยทีม CS 66
+            </p>
+        </div>
+
+        <!-- ผลงานที่ 4: สื่อสารคดี เศรษฐกิจพอเพียง -->
+        <div class="portfolio-item">
+            <h2>🌾 การทำสื่อสารคดี เศรษฐกิจพอเพียงโคกหนองนาโมเดล</h2>
+            <p>
+                สร้างสื่อวิดีโอเชิงสารคดีเพื่อถ่ายทอดแนวคิดเศรษฐกิจพอเพียงตามหลักโคกหนองนา  
+                นำเสนอกระบวนการเรียนรู้และการลงมือทำจริงในพื้นที่ชุมชน
+            </p>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="https://www.youtube.com/watch?v=huH7MoZ2avc" target="_blank"
+                   style="display: inline-block; background: linear-gradient(90deg, #ce93d8, #90caf9); color: white; padding: 0.7rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 10px rgba(103,58,183,0.3); transition: transform 0.2s;">
+                    ▶ ชมวิดีโอใน YouTube
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ติดต่อ — ภีรวัฒน์ ศรีโยธี</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Noto Sans Thai", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f8f9fa, #f3e5f5, #e3f2fd);
+        color: #333;
+        line-height: 1.8;
+        min-height: 100vh;
+        padding-bottom: 3rem;
+    }
+
+    /* แถบนำทาง */
+    .navbar {
+        background: rgba(255,255,255,0.85);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px solid #d1c4e9;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .navbar .nav-left {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .navbar a {
+        color: #5e35b1;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.6rem 1.2rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+        background: #ede7f6;
+        color: #311b92;
+    }
+
+    .navbar a.active {
+        background: linear-gradient(90deg, #ce93d8, #90caf9);
+        color: white;
+        box-shadow: 0 0 10px rgba(103,58,183,0.2);
+    }
+
+    /* กล่องหลัก */
+    .container {
+        max-width: 850px;
+        margin: 3rem auto;
+        padding: 2.5rem;
+        background: white;
+        border-radius: 25px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        text-align: center;
+        color: #4527a0;
+        font-size: 2.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+        margin-top: 1rem;
+        background: linear-gradient(90deg, #f3e5f5, #e1f5fe);
+        padding: 1.8rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-info div {
+        margin: 0.6rem 0;
+        display: flex;
+        align-items: center;
+        font-size: 1.05rem;
+        color: #37474f;
+    }
+
+    .contact-info div strong {
+        width: 130px;
+        color: #4527a0;
+    }
+
+    .contact-info a {
+        color: #3949ab;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+
+    /* กล่องส่งข้อความ */
+    .contact-form {
+        margin-top: 2.5rem;
+        background: #e3f2fd;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .contact-form h3 {
+        color: #283593;
+        margin-bottom: 1rem;
+    }
+
+    .contact-form label {
+        display: block;
+        font-weight: 600;
+        color: #4527a0;
+        margin-top: 0.8rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        border: 1px solid #b39ddb;
+        border-radius: 10px;
+        margin-top: 0.3rem;
+        font-size: 1rem;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: #7e57c2;
+        box-shadow: 0 0 5px rgba(126,87,194,0.4);
+    }
+
+    .contact-form button {
+        margin-top: 1rem;
+        padding: 0.8rem 1.8rem;
+        background: linear-gradient(90deg, #ce93d8, #90caf9);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .contact-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(103,58,183,0.3);
+    }
+
+    @media (max-width: 700px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .nav-left {
+            flex-wrap: wrap;
+        }
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="skills.html" >ทักษะ&ผลงาน</a>
+        <a href="activities.html">กิจกรรม</a>
+        <a href="contact.html" class="active">ติดต่อ</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>ช่องทางการติดต่อ</h1>
+
+    <div class="contact-info">
+        <div><strong>📞 เบอร์โทร:</strong> 098-165-1768</div>
+        <div><strong>💬 LINE ID:</strong> 0981651768</div>
+        <div><strong>📘 Facebook:</strong> <a href="https://www.facebook.com/share/1BfrAJM9GH/" target="_blank">Peerawat Seeyothee</a></div>
+        <div><strong>✉️ อีเมล:</strong> <a href="mailto:66040249141@udru.ac.th">66040249141@udru.ac.th</a></div>
+        <div><strong>📍 ที่อยู่:</strong> 142/1 ม.9 ต.โคกสะอาด อ.เมือง จ.อุดรธานี 41000</div>
+    </div>
+
+
+
+</body>
+</html>
